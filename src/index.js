@@ -13,7 +13,7 @@ $("#b").click(function(){
   let city=$("#city-input").val();
 
   let request = new XMLHttpRequest();
-  const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=3f7948f210798d69c370707542b10744`;
+  const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.MY_API_KEY}`;
   request.onreadystatechange = function(){
     if(this.readyState===4 && this.status ===200){
       const response = JSON.parse(this.responseText);
